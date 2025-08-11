@@ -12,21 +12,21 @@
     <title>FluentBit Set Up :: AWS System Manager</title>
 
     
-    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/theme.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928105" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928176" rel="stylesheet">
     
-    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928105" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928176" rel="stylesheet">
     
     
 
-    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928176"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928105"></script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928105"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928176"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928176"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hynguyxn79.github.io\/WS_NguyenKhangHy\/\/en";
     
 </script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928105"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928176"></script>
 
     
   </div>
@@ -657,7 +657,7 @@
 
 
 	<p><strong>Step 1</strong>: In the <strong>AWS Console</strong>, go to <strong>IAM</strong>, select <strong>Policies</strong>, and click <strong>Create policy</strong>.</p>
-<p><img src="/images/4.s3/12.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/12.png" alt=""></p>
 <p>In the <strong>Create policy</strong> section, select the <strong>Json</strong> tab and paste the following policy document:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
@@ -676,13 +676,13 @@
 </span></span><span style="display:flex;"><span>  ]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Then click <strong>Next</strong>, name the policy <code>FluentBitCloudWatchPolicy</code>, and click <strong>Create policy</strong>.</p>
-<p><img src="/images/4.s3/13.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/13.png" alt=""></p>
 <p><strong>Step 2</strong>: In the <strong>AWS Console</strong>, go to <strong>EC2</strong>, select <strong>Instances</strong>, and choose the first instance.</p>
-<p><img src="/images/4.s3/14.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/14.png" alt=""></p>
 <p>In the <strong>Security</strong> tab, locate the <strong>IAM Role</strong> section and click on the role name to open the <strong>IAM Console</strong>.</p>
-<p><img src="/images/4.s3/15.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/15.png" alt=""></p>
 <p>In the <strong>IAM Roles</strong> console, under <em>Add permissions</em>, select <strong>Attach policies</strong>, then search for the <code>FluentBitCloudWatchPolicy</code>. Check the box next to the policy and click <strong>Add permissions</strong>.</p>
-<p><img src="/images/4.s3/16.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/16.png" alt=""></p>
 <p>The <strong>EC2 node</strong> IAM Role now has permission to write logs to <strong>CloudWatch Logs</strong>.</p>
 <p><strong>Step 3</strong>: In the <strong>eks-workshop</strong> directory, create the following two text directories:</p>
 <ol>
@@ -778,18 +778,18 @@
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">configMap</span>:
 </span></span><span style="display:flex;"><span>            <span style="color:#f92672">name</span>: <span style="color:#ae81ff">fluent-bit-config</span>
 </span></span></code></pre></div><p>In the CMD window, use the command <code>kubectl create namespace amazon-cloudwatch</code> to create a namespace for <strong>CloudWatch</strong>.</p>
-<p><img src="/images/4.s3/i17.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/i17.png" alt=""></p>
 <p>Next, use the following two commands to apply the two files <strong>fluent-bit-configmap.yaml</strong> and <strong>fluent-bit-daemonset.yaml</strong> that were just created above:</p>
 <p><code>kubectl apply -f fluent-bit-configmap.yaml</code>
 <code>kubectl apply -f fluent-bit-daemonset.yaml</code></p>
-<p><img src="/images/4.s3/18.png" alt=""></p>
-<p><img src="/images/4.s3/19.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/18.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/19.png" alt=""></p>
 <p><strong>Step 4</strong>: Enable the OIDC Provider for the EKS cluster using the following command: <code>eksctl utils associate-iam-oidc-provider --region=ap-southeast-1 --cluster=secure-networking --approve</code>. This command creates an <strong>OIDC identity provider</strong> for the cluster and allows you to assign <strong>IAM Roles</strong> to <strong>ServiceAccounts</strong> within <strong>Kubernetes</strong>.</p>
-<p><img src="/images/4.s3/20.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/20.png" alt=""></p>
 <p>Then run the command: <code>eksctl create iamserviceaccount --name fluent-bit --namespace amazon-cloudwatch --cluster secure-networking --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy --override-existing-serviceaccounts --approve</code> to create the <strong>IAM ServiceAccount Fluent Bit</strong>.</p>
-<p><img src="/images/4.s3/21.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/21.png" alt=""></p>
 <p><strong>Step 5</strong>: Access <strong>AWS CloudWatch</strong>, find the log group such as <strong>/aws/container-insight/eks-workshop</strong>, where you will see the active logs.</p>
-<p><img src="/images/4.s3/22.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/22.png" alt=""></p>
 
 
 
@@ -1086,19 +1086,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928177"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/learn.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/learn.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928177"></script>
 
-    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928105" rel="stylesheet" />
-    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928105"></script>
+    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928177" rel="stylesheet" />
+    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928177"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

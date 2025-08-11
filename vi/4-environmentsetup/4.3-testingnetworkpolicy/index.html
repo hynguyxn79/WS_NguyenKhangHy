@@ -12,21 +12,21 @@
     <title>Kiểm tra Networkpolicy :: AWS System Manager</title>
 
     
-    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/theme.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928106" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928177" rel="stylesheet">
     
-    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928106" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928177" rel="stylesheet">
     
     
 
-    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928106"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928177"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928106"></script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928106"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928177"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928177"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hynguyxn79.github.io\/WS_NguyenKhangHy\/\/vi";
     
 </script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928106"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928177"></script>
 
     
   </div>
@@ -671,7 +671,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
 </span></span><span style="display:flex;"><span>    - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
 </span></span></code></pre></div><p>Tại cửa sổ CMD sử dụng lệnh <code>kubectl apply -f pod-a.yaml</code> để apply pod vừa mới tạo.</p>
-<p><img src="/images/4.s3/6.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/6.png" alt=""></p>
 <p><strong>Bước 2</strong>: Tiếp tục tạo một file test đặt tên là <code>pod b.yaml</code> lưu tại thư mục <strong>eks-workshop</strong> với nội dung:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
@@ -686,9 +686,9 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">busybox</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#39;sh&#39;</span>, <span style="color:#e6db74">&#39;-c&#39;</span>, <span style="color:#e6db74">&#39;sleep 3600&#39;</span>]
 </span></span></code></pre></div><p>Tại cửa sổ CMD sử dụng lệnh <code>kubectl apply -f pod-b.yaml</code> để apply pod vừa mới tạo.</p>
-<p><img src="/images/4.s3/7.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/7.png" alt=""></p>
 <p><strong>Bước 3</strong> Kiếm tra pod-b đã truy cập thành công vào pod-a thông qua IP nội bộ chưa bằng lệnh <code>kubectl exec -n secure-test pod-b -- wget -qO- http://*Ip của pod a*</code></p>
-<p><img src="/images/4.s3/8.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/8.png" alt=""></p>
 <p>Nếu thành công kết quả sẽ như hình trên.</p>
 <p><strong>Bước 4</strong>: Chúng ta sẽ tạo một <strong>NetworkPolicy</strong> chặn tất cả ingress vào <strong>pod-a</strong>, kiểm tra <strong>pod-b</strong> không còn gọi được nữa. Tạo một file text tên là <code>deny-all.yaml</code> tại thư mục <strong>eks-workshop</strong> với nội dung như sau:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
@@ -703,9 +703,9 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">policyTypes</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Ingress</span>
 </span></span></code></pre></div><p>Sau đó tại cửa sổ CMD sử dụng lệnh <code>kubectl apply -f deny-all.yaml</code> để apply file <code>deny-all.yaml</code> vừa tạo.</p>
-<p><img src="/images/4.s3/10.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/10.png" alt=""></p>
 <p><strong>Bước 5</strong>: Kiểm tra lại kết nối giữa <strong>pod a</strong> và <strong>pod b</strong> bằng lệnh <code>kubectl exec -n secure-test pod-b -- wget -T 5 -qO- http://*Ip của pod a*</code>.</p>
-<p><img src="/images/4.s3/11.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/11.png" alt=""></p>
 <p>Nếu kết quả bị treo hoặc <strong>wget: download timed out</strong> thì có nghĩa là Networkpolicy đã chặn kết nối thành công !</p>
 
 
@@ -1003,19 +1003,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928106"></script>
+    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928177"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/learn.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928106"></script>
+    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/learn.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928177"></script>
 
-    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928106" rel="stylesheet" />
-    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928106"></script>
+    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928177" rel="stylesheet" />
+    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928177"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

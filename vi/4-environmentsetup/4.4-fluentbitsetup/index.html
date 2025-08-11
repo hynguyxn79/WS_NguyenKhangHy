@@ -12,21 +12,21 @@
     <title>Thiết lập FluentBit :: AWS System Manager</title>
 
     
-    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/theme.css?1754928106" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928106" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme.css?1754928177" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928177" rel="stylesheet">
     
-    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928106" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928177" rel="stylesheet">
     
     
 
-    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928106"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928177"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928106"></script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928106"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928177"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928177"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hynguyxn79.github.io\/WS_NguyenKhangHy\/\/vi";
     
 </script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928106"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928177"></script>
 
     
   </div>
@@ -657,7 +657,7 @@
 
 
 	<p><strong>Bước 1</strong>: vào <strong>AWS Console</strong> , vào <strong>IAM</strong>, chọn phần <strong>Policies</strong> và chọn <strong>Create policy</strong></p>
-<p><img src="/images/4.s3/12.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/12.png" alt=""></p>
 <p>Tại phần <strong>Create policy</strong> chọn kiểu file <strong>Json</strong> và dán dòng lệnh này vào:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-json" data-lang="json"><span style="display:flex;"><span>{
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">&#34;Version&#34;</span>: <span style="color:#e6db74">&#34;2012-10-17&#34;</span>,
@@ -676,13 +676,13 @@
 </span></span><span style="display:flex;"><span>  ]
 </span></span><span style="display:flex;"><span>}
 </span></span></code></pre></div><p>Sau đó ấn <strong>Next</strong>, đặt tên cho policy là <code>FluentBitCloudWatchPolicy</code> sau đó chọn <strong>Create policy</strong>.</p>
-<p><img src="/images/4.s3/13.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/13.png" alt=""></p>
 <p><strong>Bước 2</strong>: Truy cập <strong>EC2</strong> trong AWS Console , chọn <strong>Instances</strong> và chọn instance đầu tiên.</p>
-<p><img src="/images/4.s3/14.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/14.png" alt=""></p>
 <p>Trong tab <strong>Security</strong>, nhìn phần <strong>IAM Role</strong> và click vào tên Role đó để mở <strong>IAM Console</strong></p>
-<p><img src="/images/4.s3/15.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/15.png" alt=""></p>
 <p>Ở Console của <strong>IAM Roles</strong>, ở phần <strong>Add permissions</strong> chọn <strong>Attach policies</strong> và sau đó tìm policy <code>FluentBitCloudWatchPolicy</code> và sau đó tick vào policy và chọn <strong>Add permissions</strong>.</p>
-<p><img src="/images/4.s3/16.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/16.png" alt=""></p>
 <p>Hiện tại IAM Role của <strong>EC2 node</strong> đã có quyền ghi log lên <strong>CloudWatch Logs</strong>.</p>
 <p><strong>Bước 3</strong>: Tại thư mục eks-workshop, tạo 2 thư mục text sau:</p>
 <ol>
@@ -778,18 +778,18 @@
 </span></span><span style="display:flex;"><span>          <span style="color:#f92672">configMap</span>:
 </span></span><span style="display:flex;"><span>            <span style="color:#f92672">name</span>: <span style="color:#ae81ff">fluent-bit-config</span>
 </span></span></code></pre></div><p>Ở cửa sổ CMD, sử dụng lệnh <code>kubectl create namespace amazon-cloudwatch</code> để tạo <strong>namespace</strong> cho <strong>CloudWatch</strong>.</p>
-<p><img src="/images/4.s3/i17.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/i17.png" alt=""></p>
 <p>Tiếp tục sử dụng 2 lệnh sau để apply cho 2 file <strong>fluent-bit-configmap.yaml</strong> và <strong>fluent-bit-daemonset.yaml</strong> vừa mới tạo ở trên</p>
 <p><code>kubectl apply -f fluent-bit-configmap.yaml</code>
 <code>kubectl apply -f fluent-bit-daemonset.yaml</code></p>
-<p><img src="/images/4.s3/18.png" alt=""></p>
-<p><img src="/images/4.s3/19.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/18.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/19.png" alt=""></p>
 <p><strong>Bước 4</strong>: Bật <strong>OIDC Provider</strong> cho <strong>EKS cluster</strong> bằng lệnh sau <code>eksctl utils associate-iam-oidc-provider --region=ap-southeast-1 --cluster=secure-networking --approve</code>. Lệnh này sẽ Tạo <strong>OIDC identity provider</strong> cho cụm và Cho phép bạn gán <strong>IAM Role</strong> cho <strong>ServiceAccount</strong> trong <strong>Kubernetes</strong>.</p>
-<p><img src="/images/4.s3/20.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/20.png" alt=""></p>
 <p>Sau đó chạy lại lệnh <code>eksctl create iamserviceaccount --name fluent-bit --namespace amazon-cloudwatch --cluster secure-networking --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy --override-existing-serviceaccounts --approve</code> để tạo <strong>IAM ServiceAccount Fluent Bit</strong>.</p>
-<p><img src="/images/4.s3/21.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/21.png" alt=""></p>
 <p><strong>Bước 5</strong>: Truy cập <strong>AWS CloudWatch</strong>, tìm log group như <strong>/aws/container-insight/eks-workshop</strong>, bạn sẽ thấy các log đang hoạt động.</p>
-<p><img src="/images/4.s3/22.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/22.png" alt=""></p>
 
 
 
@@ -1086,19 +1086,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928106"></script>
+    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928177"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/learn.js?1754928106"></script>
-    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928106"></script>
+    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/learn.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928177"></script>
 
-    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928106" rel="stylesheet" />
-    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928106"></script>
+    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928177" rel="stylesheet" />
+    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928177"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

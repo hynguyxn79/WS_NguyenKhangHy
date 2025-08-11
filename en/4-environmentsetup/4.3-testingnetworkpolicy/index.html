@@ -12,21 +12,21 @@
     <title>Testing Networkpolicy :: AWS System Manager</title>
 
     
-    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/theme.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928105" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928176" rel="stylesheet">
     
-    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928105" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928176" rel="stylesheet">
     
     
 
-    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928176"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928105"></script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928105"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928176"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928176"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hynguyxn79.github.io\/WS_NguyenKhangHy\/\/en";
     
 </script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928105"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928176"></script>
 
     
   </div>
@@ -671,7 +671,7 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">ports</span>:
 </span></span><span style="display:flex;"><span>    - <span style="color:#f92672">containerPort</span>: <span style="color:#ae81ff">80</span>
 </span></span></code></pre></div><p>In the CMD window, use the command <code>kubectl apply -f pod-a.yaml</code> to apply the newly created pod.</p>
-<p><img src="/images/4.s3/6.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/6.png" alt=""></p>
 <p><strong>Step 2</strong>: Next, create a test file named <code>pod b.yaml</code> and save it in the <strong>eks-workshop</strong> directory with the following content:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">v1</span>
 </span></span><span style="display:flex;"><span><span style="color:#f92672">kind</span>: <span style="color:#ae81ff">Pod</span>
@@ -686,9 +686,9 @@
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">image</span>: <span style="color:#ae81ff">busybox</span>
 </span></span><span style="display:flex;"><span>    <span style="color:#f92672">command</span>: [<span style="color:#e6db74">&#39;sh&#39;</span>, <span style="color:#e6db74">&#39;-c&#39;</span>, <span style="color:#e6db74">&#39;sleep 3600&#39;</span>]
 </span></span></code></pre></div><p>In the CMD window, use the command <code>kubectl apply -f pod-b.yaml</code> to apply the newly created pod.</p>
-<p><img src="/images/4.s3/7.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/7.png" alt=""></p>
 <p><strong>Step 3</strong>: Check if pod-b can successfully access pod-a through the internal IP by running the command: <code>kubectl exec -n secure-test pod-b -- wget -qO- http://*IP of pod a*</code></p>
-<p><img src="/images/4.s3/8.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/8.png" alt=""></p>
 <p>If successful, the result will be as shown above.</p>
 <p><strong>Step 4</strong>: We will create a <strong>NetworkPolicy</strong> to deny all ingress traffic to <strong>pod-a</strong>, then verify that <strong>pod-b</strong> can no longer access it. Create a text file named <code>deny-all.yaml</code> in the <strong>eks-workshop</strong> directory with the following content:</p>
 <div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-yaml" data-lang="yaml"><span style="display:flex;"><span><span style="color:#f92672">apiVersion</span>: <span style="color:#ae81ff">networking.k8s.io/v1</span>
@@ -703,9 +703,9 @@
 </span></span><span style="display:flex;"><span>  <span style="color:#f92672">policyTypes</span>:
 </span></span><span style="display:flex;"><span>  - <span style="color:#ae81ff">Ingress</span>
 </span></span></code></pre></div><p>Then, in the CMD window, use the command <code>kubectl apply -f deny-all.yaml</code> to apply the newly created <code>deny-all.yaml file</code>.</p>
-<p><img src="/images/4.s3/10.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/10.png" alt=""></p>
 <p><strong>Step 5</strong>: Recheck the connection between <strong>pod-a</strong> and <strong>pod-b</strong> using the command: <code>kubectl exec -n secure-test pod-b -- wget -T 5 -qO- http://*IP of pod a*</code>.</p>
-<p><img src="/images/4.s3/11.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/4.s3/11.png" alt=""></p>
 <p>If the result hangs or shows <strong>wget: download timed out</strong>, it means the NetworkPolicy has successfully blocked the connection!</p>
 
 
@@ -1003,19 +1003,19 @@
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928176"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928176"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928176"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928176"></script>
+    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928176"></script>
+    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928176"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/learn.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928176"></script>
+    <script src="/WS_NguyenKhangHy/js/learn.js?1754928176"></script>
+    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928176"></script>
 
-    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928105" rel="stylesheet" />
-    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928105"></script>
+    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928176" rel="stylesheet" />
+    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928176"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>

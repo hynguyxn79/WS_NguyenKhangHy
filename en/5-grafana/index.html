@@ -12,21 +12,21 @@
     <title>Monitoring With Grafana :: AWS System Manager</title>
 
     
-    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/theme.css?1754928105" rel="stylesheet">
-    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928105" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/nucleus.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/fontawesome-all.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hybrid.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/featherlight.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/perfect-scrollbar.min.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/auto-complete.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/atom-one-dark-reasonable.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme.css?1754928176" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/hugo-theme.css?1754928176" rel="stylesheet">
     
-    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928105" rel="stylesheet">
+    <link href="/WS_NguyenKhangHy/css/theme-workshop.css?1754928176" rel="stylesheet">
     
     
 
-    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery-3.3.1.min.js?1754928176"></script>
 
     <style>
       :root #header + #content > #left > #rlblock_left{
@@ -57,14 +57,14 @@
     <span data-search-clear=""><i class="fas fa-times"></i></span>
 </div>
 
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928105"></script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928105"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/lunr.min.js?1754928177"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/auto-complete.js?1754928177"></script>
 <script type="text/javascript">
     
         var baseurl = "https:\/\/hynguyxn79.github.io\/WS_NguyenKhangHy\/\/en";
     
 </script>
-<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928105"></script>
+<script type="text/javascript" src="/WS_NguyenKhangHy/js/search.js?1754928177"></script>
 
     
   </div>
@@ -652,19 +652,19 @@
 
 	<p>In this section, we will install <strong>Grafana</strong> on the <strong>EKS cluster secure-networking</strong> using Helm to integrate <strong>CloudWatch Logs</strong>.</p>
 <p><strong>Step 1</strong>: Install <strong>Helm</strong> on your machine with the command: <code>choco install kubernetes-helm -y</code></p>
-<p><img src="/images/5.fwd/1.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/1.png" alt=""></p>
 <p><strong>Step 2</strong>: Install <strong>Grafana</strong> on <strong>EKS</strong> using <strong>Helm</strong>.</p>
 <p>Create the monitoring namespace with the command: <code>kubectl create namespace monitoring</code></p>
-<p><img src="/images/5.fwd/2.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/2.png" alt=""></p>
 <p>Add the <strong>Grafana Helm</strong> repository with the command: <code>helm repo add grafana https://grafana.github.io/helm-charts</code></p>
-<p><img src="/images/5.fwd/3.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/3.png" alt=""></p>
 <p>Use the command <code>helm repo update</code> to update <strong>Helm</strong> to the latest version.</p>
-<p><img src="/images/5.fwd/4.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/4.png" alt=""></p>
 <p>Use the command: <code>helm install my-grafana grafana/grafana --namespace monitoring --set adminUser=admin --set adminPassword=securepassword --set service.type=ClusterIP</code> to install <strong>Grafana</strong> without using a volume (to avoid Pending errors). Here, <strong>admin</strong> / <strong>securepassword</strong> are the credentials you will use to log in to the <strong>Grafana</strong> interface later.</p>
-<p><img src="/images/5.fwd/5.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/5.png" alt=""></p>
 <p><strong>Step 3</strong>: Open <strong>Grafana</strong> in your browser
 Run this command <code>kubectl port-forward -n monitoring service/my-grafana 3000:80</code> in the CMD window (do not close the window after running):</p>
-<p><img src="/images/5.fwd/6.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/6.png" alt=""></p>
 <p>Open your browser and access <strong>Grafana</strong> at the URL <code>http://localhost:3000</code>. Then enter:</p>
 <ul>
 <li>
@@ -674,7 +674,7 @@ Run this command <code>kubectl port-forward -n monitoring service/my-grafana 300
 <p>Password: <code>securepassword</code></p>
 </li>
 </ul>
-<p><img src="/images/5.fwd/7.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/7.png" alt=""></p>
 <p><strong>Step 4</strong>: In the <strong>AWS Console IAM</strong>, create a new <strong>IAM User</strong> (if not already created) with the <strong>CloudWatchReadOnlyAccess</strong> policy, and generate an access key (ID + Secret). Then record the following two pieces of information:</p>
 <ul>
 <li>
@@ -684,27 +684,27 @@ Run this command <code>kubectl port-forward -n monitoring service/my-grafana 300
 <p><strong>Secret Access Key</strong></p>
 </li>
 </ul>
-<p><img src="/images/5.fwd/8.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/8.png" alt=""></p>
 <p><strong>Step 5</strong>: Create a <strong>Dashboard</strong> in <strong>Grafana</strong> to view container logs (Calico and applications).</p>
 <p>At the top-right corner, click the <strong>+</strong> icon, select <strong>New Dashboard</strong>, then choose <strong>Add Visualization</strong>, and select <strong>cloudwatch</strong> as the datasource.</p>
-<p><img src="/images/5.fwd/9.png" alt=""></p>
-<p><img src="/images/5.fwd/10.png" alt=""></p>
-<p><img src="/images/5.fwd/11.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/9.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/10.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/11.png" alt=""></p>
 <p><strong>Step 6</strong>: Configure the <strong>Dashboard</strong> to view logs.</p>
 <p>After <strong>Adding Visualization</strong>, under the <strong>Visualization</strong> section, select the table type as <strong>Logs</strong>.</p>
-<p><img src="/images/5.fwd/12.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/12.png" alt=""></p>
 <p>In the <strong>CloudWatch Metrics</strong> section, switch to <strong>CloudWatch Logs</strong>.</p>
-<p><img src="/images/5.fwd/13.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/13.png" alt=""></p>
 <p>In the <strong>Select Log Group</strong> section, choose <strong>/aws/container-insight/eks-workshop</strong> and click <strong>Add log groups</strong>.</p>
-<p><img src="/images/5.fwd/14.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/14.png" alt=""></p>
 <p>In the <strong>Query</strong> box, after enabling Logs mode, paste the following query depending on your target to view logs from <strong>Calico</strong>.</p>
 <pre tabindex="0"><code>fields @timestamp, @logStream, @message
 | filter @logStream like /calico/
 | sort @timestamp desc
 | limit 50
 </code></pre><p>Then click <strong>Run queries</strong> and the logs from Calico will appear.</p>
-<p><img src="/images/5.fwd/16.png" alt=""></p>
-<p><img src="/images/5.fwd/15.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/16.png" alt=""></p>
+<p><img src="https://hynguyxn79.github.io/WS_NguyenKhangHy/images/5.fwd/15.png" alt=""></p>
 <p>So we have finished the lab !</p>
 
 
@@ -998,19 +998,19 @@ Run this command <code>kubectl port-forward -n monitoring service/my-grafana 300
     <div style="left: -1000px; overflow: scroll; position: absolute; top: -1000px; border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;">
       <div style="border: none; box-sizing: content-box; height: 200px; margin: 0px; padding: 0px; width: 200px;"></div>
     </div>
-    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/clipboard.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/perfect-scrollbar.jquery.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/jquery.sticky.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/featherlight.min.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/highlight.pack.js?1754928177"></script>
     <script>hljs.initHighlightingOnLoad();</script>
-    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/learn.js?1754928105"></script>
-    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928105"></script>
+    <script src="/WS_NguyenKhangHy/js/modernizr.custom-3.6.0.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/learn.js?1754928177"></script>
+    <script src="/WS_NguyenKhangHy/js/hugo-learn.js?1754928177"></script>
 
-    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928105" rel="stylesheet" />
-    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928105"></script>
+    <link href="/WS_NguyenKhangHy/mermaid/mermaid.css?1754928177" rel="stylesheet" />
+    <script src="/WS_NguyenKhangHy/mermaid/mermaid.js?1754928177"></script>
     <script>
         mermaid.initialize({ startOnLoad: true });
     </script>
