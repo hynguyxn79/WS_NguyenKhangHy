@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Caching on AWS System Manager</title>
+    <link>//localhost:1313/en/tags/caching/</link>
+    <description>Recent content in Caching on AWS System Manager</description>
+    <generator>Hugo</generator>
+    <language>en</language>
+    <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/en/tags/caching/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Accelerate and Secure with CloudFront: Advanced Caching &amp; Security</title>
+      <link>//localhost:1313/en/1-introduce/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/en/1-introduce/</guid>
+      <description>Discover how AWS CloudFront boosts content delivery speed and secures your system through advanced caching and comprehensive security features.</description>
+    </item>
+  </channel>
+</rss>

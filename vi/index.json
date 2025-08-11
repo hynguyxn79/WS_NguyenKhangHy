@@ -1,0 +1,120 @@
+[
+{
+	"uri": "/vi/2-prerequiste/2.1-installchocolatey/",
+	"title": "Cài đặt Chocolatey",
+	"tags": [],
+	"description": "",
+	"content": "Cài đặt Chocolatey cho Windows để cài đặt các dịch vụ cần thiết như AWSCLI, KUBECTL, EKSCTL.\nBước 1: Sử dụng Powershell của Windows chạy dưới quyến Administrator.\nBước 2: Nhập theo thứ tự:\nSet-ExecutionPolicy Bypass -Scope Process -Force : Đoạn lệnh này cho phép PowerShell chạy script cài đặt Chocolatey mà không bị chặn bởi chính sách mặc định.\n[System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072: Đoạn lệnh này đảm bảo PowerShell có thể dùng TLS 1.2 để tải file từ internet, vì nhiều server (trong đó có Chocolatey) không chấp nhận TLS 1.0 hoặc 1.1 nữa.\niex ((New-Object System.Net.WebClient).DownloadString('https://community.chocolatey.org/install.ps1')): đoạn lệnh này tải script cài đặt Chocolatey từ trang chính thức và chạy nó luôn\nKhi cài đặt thành công kết quả trả về như sau:\n"
+},
+{
+	"uri": "/vi/",
+	"title": "Container Network Security",
+	"tags": [],
+	"description": "",
+	"content": "Làm việc với Container Network Security - Calico \u0026amp; AWS VPC CNI Tổng quan Trong bài lab này, bạn sẽ tìm hiểu và thực hành các kỹ thuật bảo mật mạng nâng cao trong môi trường Kubernetes trên Amazon EKS. Thông qua sự kết hợp giữa Calico và AWS VPC CNI, workshop tập trung vào:\nThiết lập và quản lý Network Policy để kiểm soát lưu lượng giữa các pod và namespace.\nÁp dụng microsegmentation để chia nhỏ và cô lập các thành phần ứng dụng, hạn chế phạm vi tấn công.\nThực hiện traffic encryption nhằm bảo vệ dữ liệu truyền tải nội bộ.\nGiám sát và phân tích hoạt động mạng thông qua FluentBit, CloudWatch và Grafana.\nNgười tham gia sẽ được hướng dẫn từng bước từ việc khởi tạo EKS Cluster, cài đặt Calico, cấu hình AWS VPC CNI, triển khai các chính sách bảo mật, kiểm tra và xác minh hiệu quả, cho đến thiết lập hệ thống giám sát và cảnh báo.\nNội dung Giới thiệu Các bước chuẩn bị Truy cập AWS Configure Thiết lập môi trường Monitoring với Grafana Dọn dẹp tài nguyên "
+},
+{
+	"uri": "/vi/1-introduce/",
+	"title": "Giới thiệu",
+	"tags": [],
+	"description": "",
+	"content": "Trong kiến trúc hiện đại dựa trên microservices và container, việc đảm bảo bảo mật mạng (network security) là một yếu tố sống còn để ngăn chặn các rủi ro như truy cập trái phép, dò quét nội bộ hoặc nghe lén dữ liệu. Trong môi trường Kubernetes, nơi hàng trăm đến hàng ngàn container có thể tương tác lẫn nhau, việc kiểm soát luồng lưu lượng nội bộ trở nên rất phức tạp. Nếu không có các chính sách mạng phù hợp, một lỗ hổng nhỏ có thể dẫn đến hậu quả nghiêm trọng trên toàn hệ thống.\nAmazon EKS (Elastic Kubernetes Service) là một dịch vụ được quản lý giúp triển khai Kubernetes một cách dễ dàng, bảo mật và mở rộng. EKS được tích hợp sẵn nhiều công cụ bảo mật mạng, và đặc biệt hỗ trợ các plugin như Calico để triển khai các chính sách mạng tiên tiến.\nTrong Amazon EKS, networking được xử lý mặc định thông qua AWS VPC CNI plugin, giúp mỗi Pod có thể sử dụng địa chỉ IP thật từ VPC, đảm bảo khả năng giao tiếp trực tiếp và bảo mật theo chuẩn hạ tầng AWS. Việc kết hợp VPC CNI với Calico cho phép tận dụng ưu điểm của cả bảo mật mạng truyền thống (Security Groups) và kiểm soát traffic nội bộ sâu hơn (Network Policies).\nMục tiêu chính Triển khai AWS VPC CNI: hiểu rõ cách thức hoạt động của VPC CNI trong việc cấp phát IP cho Pod, tích hợp với Security Groups và đóng vai trò nền tảng cho microsegmentation trong EKS.\nTriển khai Network Policies: sử dụng Calico để định nghĩa các chính sách kiểm soát traffic giữa các Pod. Giúp hạn chế phạm vi ảnh hưởng khi có container bị tấn công.\nThực hành Microsegmentation: phân chia mạng nội bộ theo namespace và chính sách ingress/egress. Đây là chiến lược chia nhỏ bề mặt tấn công nhằm cô lập sự cố, giảm thiểu rủi ro lây lan.\nTriển khai Traffic Encryption: cấu hình chế độ policy-only và áp dụng mã hóa lưu lượng giữa các Pod trong cluster để ngăn chặn sniffing và MITM (Man-in-the-middle attack).\nThiết lập Monitoring: sử dụng Fluent Bit để thu thập log từ container, chuyển về Amazon CloudWatch Logs. Đồng thời tích hợp với Grafana để trực quan hóa và tạo cảnh báo về hoạt động bất thường, đặc biệt là log lỗi từ Calico.\nNgoài ra, workshop còn cung cấp trải nghiệm thực tế trong việc xử lý sự cố DNS nội bộ, xác thực IAM cho Fluent Bit, sử dụng Helm để cài đặt Grafana và cuối cùng là dọn dẹp toàn bộ tài nguyên đã triển khai để tránh phát sinh chi phí không cần thiết.\nMục tiêu cuối cùng Giúp người học hiểu rõ cơ chế bảo vệ mạng nội bộ trong Amazon EKS, từ kiểm soát truy cập đến phát hiện rò rỉ lưu lượng, góp phần xây dựng một kiến trúc Kubernetes bảo mật, linh hoạt và có thể mở rộng trong môi trường doanh nghiệp.\n"
+},
+{
+	"uri": "/vi/4-environmentsetup/4.1-eksclustersetup/",
+	"title": "Thiết lập EKS Cluster",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này, chúng ta sẽ tạo một file Cluster để mô tả cấu hình của EKS cluster theo chuẩn eksctl dưới dạng YAML. Giúp bạn quản lý cluster như một infrastructure as code (IaC) thay vì phải gõ lệnh dài trên CLI, mọi thông số được ghi rõ trong file. Đồng thời dảm bảo tái sử dụng và tái tạo: chỉ cần file này là có thể tạo lại cluster y hệt trên bất kỳ môi trường AWS nào.\nBước 1: Tạo một file text ở deskstop với nội dung như sau:\napiVersion: eksctl.io/v1alpha5 kind: ClusterConfig metadata: name: secure-networking region: ap-southeast-1 nodeGroups: - name: ng-1 instanceType: t3.medium desiredCapacity: 2 volumeSize: 20 Lưu file với dạng yaml và lưu vào thư mục eks-workshop.\nBước 2: Sau đó ở cửa sổ Terminal ta nhập dòng lệnh eksctl create cluster -f cluster.yaml để dùng eksctl để tạo một Amazon EKS cluster dựa trên thông số cấu hình được định nghĩa trong file cluster.yaml\nNếu kết quả như sau là bạn đã tạo thành công cluster.\nBước 3: Sử dụng lệnh kubectl get nodes để kiểm tra cụm EKS sau khi tạo.\nNếu bạn thấy các node như trên có nghĩa là bạn đã tạo thành công !\n"
+},
+{
+	"uri": "/vi/2-prerequiste/",
+	"title": "Các bước chuẩn bị",
+	"tags": [],
+	"description": "",
+	"content": "Để sử dụng các dịch vụ của AWS mà không cần sử dụng Console để triển khai, cũng như là các thao tác để tạo các dữ liệu bên trong dịch vụ, chúng ta cần cài đặt các dịch vụ của AWS như Awscli, Eksctl, Kubernetesctl để triển khai trên CMD của Windows để dễ thao tác và đơn giản hóa quá trình cài đặt các dữ liệu của AWS Console.\nNội dung Cài đặt Chocolatey Cài đặt Awscli Cài đặt Eksctl Cài đặt Kubernetesctl "
+},
+{
+	"uri": "/vi/2-prerequiste/2.2-installawscli/",
+	"title": "Cài đặt AWSCLI",
+	"tags": [],
+	"description": "",
+	"content": "Bước 1: Mở CMD của Windows dưới quyền Administrator\nBước 2: Nhập choco install eksctl -ychoco install awscli -y để sử dụng Chocolatey để cài đặt Awscli.\nNếu kết quả như trên có nghĩa là đã cài dặt AWSCLI thành công.\n"
+},
+{
+	"uri": "/vi/4-environmentsetup/4.2-calicosetup/",
+	"title": "Triển Khai Bảo Mật Mạng Với Calico",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ cài đặt và thiết lập Calico.\nBước 1: Tạo một file text mới tên installation.yaml trong thư mục eks-workshop với nội dung sau:\napiVersion: operator.tigera.io/v1 kind: Installation metadata: name: default spec: kubernetesProvider: EKS cni: type: AmazonVPC calicoNetwork: bgp: Disabled Bước 2: Tại cửa sổ CMD, nhập dòng lệnh kubectl apply -f installation.yaml để áp dụng file installation.yaml vừa tạo.\nNếu tải thành công kết quả sẽ là: installation.operator.tigera.io/default created\nBước 3: SỬ dụng lệnh kubectl get pods -n tigera-operator để giúp bạn xem các Operator đã chạy chưa (trạng thái phải là Running hoặc Completed).\nBước 4: Sử dụng lệnh kubectl get pods -n calico-system để giúp bạn kiểm tra xem toàn bộ dịch vụ mạng của Calico đã sẵn sàng chưa. Nếu là Running có nghĩa là dịch vụ đã sẵn sàng.\n"
+},
+{
+	"uri": "/vi/2-prerequiste/2.3-installeksctl/",
+	"title": "Cài đặt EKSCTL",
+	"tags": [],
+	"description": "",
+	"content": "Tiép tục tại cửa sổ CMD, nhập choco install eksctl -y để sử dụng Chocolatey để cài đặt EKSCTL.\nNếu kết quả như trên có nghĩa là quá trình cài đặt thành công (ở hình trên là máy đã có sẵn EKSCTL).\n"
+},
+{
+	"uri": "/vi/4-environmentsetup/4.3-testingnetworkpolicy/",
+	"title": "Kiểm tra Networkpolicy",
+	"tags": [],
+	"description": "",
+	"content": "Bước 1: Tạo một file test đặt tên là pod a.yaml lưu tại thư mục eks-workshop với nội dung:\napiVersion: v1 kind: Pod metadata: name: pod-a namespace: secure-test labels: app: a spec: containers: - name: nginx image: nginx ports: - containerPort: 80 Tại cửa sổ CMD sử dụng lệnh kubectl apply -f pod-a.yaml để apply pod vừa mới tạo.\nBước 2: Tiếp tục tạo một file test đặt tên là pod b.yaml lưu tại thư mục eks-workshop với nội dung:\napiVersion: v1 kind: Pod metadata: name: pod-b namespace: secure-test labels: app: b spec: containers: - name: busybox image: busybox command: [\u0026#39;sh\u0026#39;, \u0026#39;-c\u0026#39;, \u0026#39;sleep 3600\u0026#39;] Tại cửa sổ CMD sử dụng lệnh kubectl apply -f pod-b.yaml để apply pod vừa mới tạo.\nBước 3 Kiếm tra pod-b đã truy cập thành công vào pod-a thông qua IP nội bộ chưa bằng lệnh kubectl exec -n secure-test pod-b -- wget -qO- http://*Ip của pod a*\nNếu thành công kết quả sẽ như hình trên.\nBước 4: Chúng ta sẽ tạo một NetworkPolicy chặn tất cả ingress vào pod-a, kiểm tra pod-b không còn gọi được nữa. Tạo một file text tên là deny-all.yaml tại thư mục eks-workshop với nội dung như sau:\napiVersion: networking.k8s.io/v1 kind: NetworkPolicy metadata: name: deny-all-ingress namespace: secure-test spec: podSelector: matchLabels: app: a policyTypes: - Ingress Sau đó tại cửa sổ CMD sử dụng lệnh kubectl apply -f deny-all.yaml để apply file deny-all.yaml vừa tạo.\nBước 5: Kiểm tra lại kết nối giữa pod a và pod b bằng lệnh kubectl exec -n secure-test pod-b -- wget -T 5 -qO- http://*Ip của pod a*.\nNếu kết quả bị treo hoặc wget: download timed out thì có nghĩa là Networkpolicy đã chặn kết nối thành công !\n"
+},
+{
+	"uri": "/vi/3-accessawsconfigure/",
+	"title": "Truy cập AWS Configure",
+	"tags": [],
+	"description": "",
+	"content": "Trong bước này, chúng ta sẽ thực hiện tạo kết nối đến AWS Console, dùng để thiết lập AWS CLI với thông tin xác thực và cấu hình mặc định, để sau đó bạn có thể chạy các lệnh AWS từ terminal.\nBước 1: Trong cửa sổ CMD, gõ lệnh aws configure để thiết lập AWS CLI với thông tin xác thực và cấu hình mặc định.\nBước 2: Sau khi chạy lệnh aws configure, nó sẽ yêu cầu bạn nhập 4 thông tin:\nAWS Access Key ID: Nhập Access Key ID của tài khoản root hay IAM của bạn trên AWS Console (VD: AKIAxxxxxxxxxxxx).\nAWS Secret Access Key: Nhập Secret Access Key của tài khoản root hay IAM của bạn trên AWS Console (VD: AbCdEfGhIjKlMnOpQrStUvWxYz).\nDefault region name: Nhập ap-southeast-1 cho Singapore.\nDefault output format: Nhập json.\nBước 3: Sau khi nhập xong thông tin, nhập lệnh aws sts get-caller-identity để kiểm tra thông tin bạn nhập đúng chưa.\nNếu bạn nhập đúng, kết quả sẽ trả về như sau (ở đây máy dùng tài khoản root). Bạn dã hoàn công việc tạo kết nối đến AWS Console.\n"
+},
+{
+	"uri": "/vi/2-prerequiste/2.4-installkubernetcli/",
+	"title": "Cài đặt KUBERNETESCLI",
+	"tags": [],
+	"description": "",
+	"content": "Tiếp tục tại cửa sổ CMD, ta nhập choco install kubernetes-cli -y để cài đặt KubernetesCLI cho Windows.\nNếu kết quả như trên là ta đã thành công cài đặt KubernetesCLI cho Windows (ở trên là máy đã có sẵn KubernetesCLI).\n"
+},
+{
+	"uri": "/vi/4-environmentsetup/4.4-fluentbitsetup/",
+	"title": "Thiết lập FluentBit",
+	"tags": [],
+	"description": "",
+	"content": "Bước 1: vào AWS Console , vào IAM, chọn phần Policies và chọn Create policy\nTại phần Create policy chọn kiểu file Json và dán dòng lệnh này vào:\n{ \u0026#34;Version\u0026#34;: \u0026#34;2012-10-17\u0026#34;, \u0026#34;Statement\u0026#34;: [ { \u0026#34;Effect\u0026#34;: \u0026#34;Allow\u0026#34;, \u0026#34;Action\u0026#34;: [ \u0026#34;logs:PutLogEvents\u0026#34;, \u0026#34;logs:DescribeLogStreams\u0026#34;, \u0026#34;logs:DescribeLogGroups\u0026#34;, \u0026#34;logs:CreateLogStream\u0026#34;, \u0026#34;logs:CreateLogGroup\u0026#34; ], \u0026#34;Resource\u0026#34;: \u0026#34;*\u0026#34; } ] } Sau đó ấn Next, đặt tên cho policy là FluentBitCloudWatchPolicy sau đó chọn Create policy.\nBước 2: Truy cập EC2 trong AWS Console , chọn Instances và chọn instance đầu tiên.\nTrong tab Security, nhìn phần IAM Role và click vào tên Role đó để mở IAM Console\nỞ Console của IAM Roles, ở phần Add permissions chọn Attach policies và sau đó tìm policy FluentBitCloudWatchPolicy và sau đó tick vào policy và chọn Add permissions.\nHiện tại IAM Role của EC2 node đã có quyền ghi log lên CloudWatch Logs.\nBước 3: Tại thư mục eks-workshop, tạo 2 thư mục text sau:\nfluent-bit-configmap.yaml apiVersion: v1 kind: ConfigMap metadata: name: fluent-bit-config namespace: amazon-cloudwatch data: fluent-bit.conf: | [SERVICE] Flush 1 Log_Level info Parsers_File parsers.conf HTTP_Server On HTTP_Listen 0.0.0.0 HTTP_Port 2020 [INPUT] Name tail Path /var/log/containers/*.log Tag kube.* Refresh_Interval 5 Rotate_Wait 30 Mem_Buf_Limit 50MB Skip_Long_Lines On DB /var/log/flb_kube.db [FILTER] Name kubernetes Match kube.* Kube_URL https://kubernetes.default.svc:443 Merge_Log On K8S-Logging.Parser On K8S-Logging.Exclude On [OUTPUT] Name cloudwatch_logs Match kube.* region ap-southeast-1 log_group_name /aws/container-insight/eks-workshop log_stream_prefix from-fluent-bit- auto_create_group true parsers.conf: | [PARSER] Name docker Format json Time_Key time Time_Format %Y-%m-%dT%H:%M:%S.%L Time_Keep On fluent-bit-daemonset.yaml apiVersion: apps/v1 kind: DaemonSet metadata: name: fluent-bit namespace: amazon-cloudwatch labels: k8s-app: fluent-bit spec: selector: matchLabels: k8s-app: fluent-bit template: metadata: labels: k8s-app: fluent-bit spec: serviceAccountName: fluent-bit tolerations: - operator: Exists containers: - name: fluent-bit image: public.ecr.aws/aws-observability/aws-for-fluent-bit:latest ports: - containerPort: 2020 name: api protocol: TCP volumeMounts: - name: varlog mountPath: /var/log - name: config-volume mountPath: /fluent-bit/etc/ volumes: - name: varlog hostPath: path: /var/log - name: config-volume configMap: name: fluent-bit-config Ở cửa sổ CMD, sử dụng lệnh kubectl create namespace amazon-cloudwatch để tạo namespace cho CloudWatch.\nTiếp tục sử dụng 2 lệnh sau để apply cho 2 file fluent-bit-configmap.yaml và fluent-bit-daemonset.yaml vừa mới tạo ở trên\nkubectl apply -f fluent-bit-configmap.yaml kubectl apply -f fluent-bit-daemonset.yaml\nBước 4: Bật OIDC Provider cho EKS cluster bằng lệnh sau eksctl utils associate-iam-oidc-provider --region=ap-southeast-1 --cluster=secure-networking --approve. Lệnh này sẽ Tạo OIDC identity provider cho cụm và Cho phép bạn gán IAM Role cho ServiceAccount trong Kubernetes.\nSau đó chạy lại lệnh eksctl create iamserviceaccount --name fluent-bit --namespace amazon-cloudwatch --cluster secure-networking --attach-policy-arn arn:aws:iam::aws:policy/CloudWatchAgentServerPolicy --override-existing-serviceaccounts --approve để tạo IAM ServiceAccount Fluent Bit.\nBước 5: Truy cập AWS CloudWatch, tìm log group như /aws/container-insight/eks-workshop, bạn sẽ thấy các log đang hoạt động.\n"
+},
+{
+	"uri": "/vi/4-environmentsetup/",
+	"title": "Thiết lập môi trường",
+	"tags": [],
+	"description": "",
+	"content": "Phần này sẽ hướng dẫn cách thiết lập môi trường làm việc cho workshop, bao gồm cấu hình các thành phần cần thiết như EKS Cluster, bảo mật mạng với Calico, kiểm tra network policy và thiết lập FluentBit để thu thập log. Đây là bước chuẩn bị cơ bản để đảm bảo các phần tiếp theo có thể triển khai hiệu quả và dễ dàng theo dõi các kết nối logs.\nNội dung: Thiết lập EKS Cluster Triển Khai Bảo Mật Mạng Với Calico Kiểm tra Networkpolicy Thiết lập FluentBit "
+},
+{
+	"uri": "/vi/5-grafana/",
+	"title": "Monitoring với Grafana",
+	"tags": [],
+	"description": "",
+	"content": "Trong phần này chúng ta sẽ cài đặt Grafana lên EKS cluster secure-networking bằng Helm để tích hợp CloudWatch Logs.\nBước 1: Cài Helm trên máy bạn bằng lệnh choco install kubernetes-helm -y.\nBước 2: Cài đặt Grafana trên EKS bằng Helm.\nTạo namespace monitoring bằng lệnh kubectl create namespace monitoring.\nThêm Helm vào Grafana với lệnh helm repo add grafana https://grafana.github.io/helm-charts.\nDùng lệnh helm repo update đế cập nhật bản mới nhất cho Helm.\nDùng lệnh helm install my-grafana grafana/grafana --namespace monitoring --set adminUser=admin --set adminPassword=securepassword --set service.type=ClusterIP để cài Grafana không dùng volume (để tránh lỗi Pending). Trong đó admin / securepassword là tài khoản bạn sẽ dùng để đăng nhập giao diện Grafana sau này.\nBước 3: Mở Grafana trên trình duyệt Chạy lệnh kubectl port-forward -n monitoring service/my-grafana 3000:80 trong CMD (không đóng cửa sổ sau khi chạy):\nMở trình duyệt và truy cập Grafana bằng web theo địa chỉ http://localhost:3000. Sau đó nhập\nUsername: admin\nPassword: securepassword\nBước 4: Vào AWS Console IAM tạo IAM User mới (nếu chưa có), với policy CloudWatchReadOnlyAccess và tạo access key (ID + Secret), sau đó ghi lại 2 thông tin:\nAccess Key ID\nSecret Access Key\nBước 5: Tạo Dashboard trong Grafana để xem logs container (Calico và ứng dụng).\nỞ góc phải, click vào biểu tượng + Chọn New Dashboard, rồi sau đó chọn Add Visualization, chọn datasource là cloudwatch.\nBước 6: Thiết lập Dashboard để xem logs.\nSau khi Add Visualization. Bên phần Visualization ta chọn kiểu bảng là Logs .\nỞ phần Cloudwatch Metrics, ta chuyển thành Cloudwatch Logs.\nTrong phần Select Log Group ta chọn /aws/container-insight/eks-workshop và chọn Add log groups\nTrong ô Query sau khi đã bật Logs mode, bạn dán truy vấn sau tùy mục tiêu để xem logs từ Calico.\nfields @timestamp, @logStream, @message\r| filter @logStream like /calico/\r| sort @timestamp desc\r| limit 50 Sau đó ấn Run queries và các logs từ Calico sẽ hiện ra.\nVậy là chúng ta đã hoàn thành xong bài thực hành!\n"
+},
+{
+	"uri": "/vi/6-cleanup/",
+	"title": "Dọn dẹp tài nguyên",
+	"tags": [],
+	"description": "",
+	"content": "Chúng ta sẽ tiến hành các bước sau để xóa các tài nguyên chúng ta đã tạo trong bài thực hành này.\nXóa EC2 Auto Scaling Group và Instances Vào EC2 - Auto Scaling Group Chọn Auto Scaling Group đã tạo Chọn Action. Chọn Delete. Vào EC2 - Instances Chọn 2 Instance đang hoạt động. Chọn Instance state. Chọn Terminate (delete) instance. Xóa AWS EKS Vào EKS Console Chọn cluster secure-networking. Chọn Delete. Xóa CloudWatch Log Group Vào CloudWatch Console. Chọn Log groups. Chọn nhóm /aws/container-insight/eks-workshop. Chọn Actions \u0026gt; Delete log group. Xóa VPC Vào VPC Console và xóa theo thứ tự:\n1. Subnets\nChọn các subnet có tên eksctl-secure-networking-cluster Chọn Action. Chọn Delete subnet. 2. Route tables\nChọn các Route tablesc có tên eksctl-secure-networking-cluster. Chọn Action. Chọn Delete route table. 3. Internet gateways\nChọn các Internet gateways có tên eksctl-secure-networking-cluster. Chọn Action. Chọn Delete internet gateway. 4. NAT gateways\nChọn NAT gateway có tên eksctl-secure-networking-cluster. Chọn Action. Chọn Delete NAT gateway. 5. Your VPCs\nChọn VPC có tên eksctl-secure-networking-cluster. Chọn Action. Chọn Delete VPC. "
+},
+{
+	"uri": "/vi/categories/",
+	"title": "Categories",
+	"tags": [],
+	"description": "",
+	"content": ""
+},
+{
+	"uri": "/vi/tags/",
+	"title": "Tags",
+	"tags": [],
+	"description": "",
+	"content": ""
+}]

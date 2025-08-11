@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>CloudFront on AWS System Manager</title>
+    <link>//localhost:1313/vi/tags/cloudfront/</link>
+    <description>Recent content in CloudFront on AWS System Manager</description>
+    <generator>Hugo</generator>
+    <language>vi</language>
+    <lastBuildDate>Fri, 01 Aug 2025 00:00:00 +0000</lastBuildDate>
+    <atom:link href="//localhost:1313/vi/tags/cloudfront/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Tăng Tốc và Bảo Mật với CloudFront: Advanced Caching &amp; Security</title>
+      <link>//localhost:1313/vi/1-introduce/</link>
+      <pubDate>Fri, 01 Aug 2025 00:00:00 +0000</pubDate>
+      <guid>//localhost:1313/vi/1-introduce/</guid>
+      <description>Khám phá cách CloudFront của AWS giúp tăng tốc độ phân phối nội dung và bảo vệ hệ thống của bạn bằng các tính năng caching nâng cao và bảo mật toàn diện.</description>
+    </item>
+  </channel>
+</rss>
