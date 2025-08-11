@@ -2,10 +2,10 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Tags on AWS System Manager</title>
-    <link>/en/tags/</link>
+    <link>https://hynguyxn79.github.io/WS_NguyenKhangHy/en/tags/</link>
     <description>Recent content in Tags on AWS System Manager</description>
     <generator>Hugo</generator>
     <language>en</language>
-    <atom:link href="/en/tags/index.xml" rel="self" type="application/rss+xml" />
+    <atom:link href="https://hynguyxn79.github.io/WS_NguyenKhangHy/en/tags/index.xml" rel="self" type="application/rss+xml" />
   </channel>
 </rss>
